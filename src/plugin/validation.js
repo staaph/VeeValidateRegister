@@ -5,7 +5,7 @@ import {
   ErrorMessage,
   configure,
 } from 'vee-validate';
-import { required, min, max } from '@vee-validate/rules';
+import { required, min, max, confirmed, email } from '@vee-validate/rules';
 
 export default {
   install(app) {
@@ -17,6 +17,10 @@ export default {
     defineRule('min', min);
     defineRule('max', max);
     defineRule('tos', required)
+    defineRule('passwords_mismatch', confirmed);
+    defineRule('email', email)
+    defineRule('confirm_password', required)
+    
 
     configure({
       generateMessage: (ctx) => {
@@ -28,8 +32,10 @@ export default {
           email: `Not a valid email.`,
           min_value: `${ctx.field} is too low.`,
           max_value: `${ctx.field} is too high.`,
-          password: 'test',
-          tos: 'You must accept the Terms of Service'
+          passwords_mismatch: "The passwords don't match.",
+          confirm_password: 'Please confirm your password',
+          tos: 'You must accept the Terms of Service',
+          login: 'Incorrect login credentials'
         };
 
         const message = messages[ctx.rule.name]
@@ -38,8 +44,8 @@ export default {
 
         return message;
       },
-      validateOnBlur: true,
-      validateOnChange: true,
+      validateOnBlur: false,
+      validateOnChange: false,
       validateOnInput: false,
       validateOnModelUpdate: true,
     });
