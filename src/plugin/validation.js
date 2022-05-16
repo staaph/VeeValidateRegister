@@ -26,7 +26,7 @@ export default {
       generateMessage: (ctx) => {
         const messages = {
           required: `${ctx.field} is required.`,
-          min: `${ctx.field} is too short.`,
+          min: `${ctx.field} must have min 8 characters`,
           max: `${ctx.field} is too long.`,
           alpha_spaces: `${ctx.field} may only contain alphabetic characters and spaces.`,
           email: `Not a valid email.`,
