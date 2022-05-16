@@ -17,7 +17,7 @@
       <vee-field
         name="username"
         placeholder="John Doe"
-        class="bg-slate-400 dark:bg-gray-700 outline-none w-full flex p-2 items-center text-black dark:text-gray-50 rounded"
+        class="placeholder:text-gray-500 bg-slate-400 dark:bg-gray-700 outline-none w-full flex p-2 items-center text-black dark:text-gray-50 rounded"
       />
     </section>
 
@@ -35,7 +35,7 @@
         type="email"
         name="email"
         placeholder="john.doe@email.com"
-        class="bg-slate-400 dark:bg-gray-700 outline-none w-full flex p-2 items-center text-black dark:text-gray-50 rounded"
+        class="placeholder:text-gray-500 bg-slate-400 dark:bg-gray-700 outline-none w-full flex p-2 items-center text-black dark:text-gray-50 rounded"
       />
     </section>
     <!-- PASSWORD -->
@@ -56,14 +56,14 @@
           name="password"
           placeholder="password"
           type="password"
-          class="bg-slate-400 dark:bg-gray-700 outline-none w-full"
+          class="placeholder:text-gray-500 bg-slate-400 dark:bg-gray-700 outline-none w-full"
         />
         <vee-field
           v-if="showPassword"
           name="password"
           placeholder="password"
           type="text"
-          class="bg-slate-400 dark:bg-gray-700 outline-none w-full"
+          class="placeholder:text-gray-500 bg-slate-400 dark:bg-gray-700 outline-none w-full"
         />
         <button @click="togglePassword">
           <EyesIcon v-if="!showPassword" />
@@ -90,14 +90,14 @@
           name="confirm_password"
           placeholder="confirm password"
           type="password"
-          class="bg-slate-400 dark:bg-gray-700 outline-none w-full"
+          class="bg-slate-400 dark:bg-gray-700 outline-none w-full placeholder:text-gray-500"
         />
         <vee-field
           v-if="showPassword"
           name="confirm_password"
           placeholder="confirm password"
           type="text"
-          class="bg-slate-400 dark:bg-gray-700 outline-none w-full"
+          class="bg-slate-400 dark:bg-gray-700 outline-none w-full placeholder:text-gray-500"
         />
 
         <button @click="togglePassword">

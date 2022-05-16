@@ -18,7 +18,7 @@
         type="email"
         name="login"
         placeholder="john.doe@email.com / johndoe"
-        class="bg-slate-400 dark:bg-gray-700 outline-none w-full flex p-2 items-center text-black dark:text-gray-50 rounded"
+        class="placeholder:text-gray-500 bg-slate-400 dark:bg-gray-700 outline-none w-full flex p-2 items-center text-black dark:text-gray-50 rounded"
       />
     </section>
     <!-- PASSWORD -->
@@ -39,14 +39,14 @@
           name="password"
           placeholder="password"
           type="password"
-          class="bg-slate-400 dark:bg-gray-700 outline-none w-full rounded"
+          class="bg-slate-400 dark:bg-gray-700 outline-none w-full rounded placeholder:text-gray-500"
         />
         <vee-field
           v-if="showPassword"
           name="password"
           placeholder="password"
           type="text"
-          class="bg-slate-400 dark:bg-gray-700 outline-none w-full rounded"
+          class="bg-slate-400 dark:bg-gray-700 outline-none w-full rounded placeholder:text-gray-500"
         />
         <button @click="togglePassword">
           <EyesIcon v-if="!showPassword" />
