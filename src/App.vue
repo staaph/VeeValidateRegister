@@ -1,6 +1,6 @@
 <template>
   <main
-    class="flex justify-center items-center min-h-screen w-full dark:bg-black bg-gray-300"
+    class="flex justify-center items-center min-h-screen w-full dark:bg-gradient-to-br dark:from-gray-500 dark:via-gray-600 dark:to-gray-500 dark:bg-gray-300"
   >
     <div class="absolute top-3 right-5 dark:text-white text-black">
       <button @click="toggleTheme" v-if="userTheme === 'light'">
@@ -11,7 +11,7 @@
       </button>
     </div>
     <section
-      class="bg-slate-300 border-black border dark:border-none dark:bg-gray-800 w-11/12 sm:w-1/2 lg:w-1/3 rounded-lg py-4 px-8"
+      class="m-16 bg-slate-300 border-black border dark:border-none dark:bg-gray-800 w-11/12 sm:w-1/2 lg:w-1/3 rounded-lg py-4 px-8"
     >
       <div v-if="showLogin">
         <h2

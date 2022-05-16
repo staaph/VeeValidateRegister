@@ -23,14 +23,14 @@ export default {
     configure({
       generateMessage: (ctx) => {
         const messages = {
-          required: `${ctx.field} is required.`,
+          required: `${ctx.field} is required`,
           min: `${ctx.field} must have min 8 characters`,
           max: `${ctx.field} is too long.`,
-          alpha_spaces: `${ctx.field} may only contain alphabetic characters and spaces.`,
-          email: `Not a valid email.`,
-          min_value: `${ctx.field} is too low.`,
-          max_value: `${ctx.field} is too high.`,
-          passwords_mismatch: "The passwords don't match.",
+          alpha_spaces: `${ctx.field} may only contain alphabetic characters and spaces`,
+          email: `Not a valid email`,
+          min_value: `${ctx.field} is too low`,
+          max_value: `${ctx.field} is too high`,
+          passwords_mismatch: "The passwords don't match",
           confirm_password: 'Please confirm your password',
           tos: 'You must accept the Terms of Service',
           login: 'Incorrect login credentials'
