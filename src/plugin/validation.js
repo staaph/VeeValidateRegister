@@ -23,11 +23,11 @@ export default {
     configure({
       generateMessage: (ctx) => {
         const messages = {
-          required: `${ctx.field} is required`,
+          required: `Please fill out this field`,
           min: `${ctx.field} must have min 8 characters`,
           max: `${ctx.field} is too long.`,
           alpha_spaces: `${ctx.field} may only contain alphabetic characters and spaces`,
-          email: `Not a valid email`,
+          email: `email is invalid`,
           min_value: `${ctx.field} is too low`,
           max_value: `${ctx.field} is too high`,
           passwords_mismatch: "The passwords don't match",

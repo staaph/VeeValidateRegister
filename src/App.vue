@@ -11,7 +11,7 @@
       </button>
     </div>
     <section
-      class="m-16 bg-slate-300 border-black border dark:border-none dark:bg-gray-800 w-11/12 sm:w-1/2 lg:w-1/3 rounded-lg py-4 px-8"
+      class="my-16 bg-slate-300 border-black border dark:border-none dark:bg-gray-800 w-11/12 sm:w-1/2 lg:w-1/3 rounded-lg py-4 px-8"
     >
       <div v-if="showLogin">
         <h2
