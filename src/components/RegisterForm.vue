@@ -3,6 +3,7 @@
     class="flex flex-col"
     :validation-schema="schema"
     @submit="onSubmit"
+    v-slot="{ errors }"
   >
     <!-- USERNAME -->
     <section class="flex flex-col mb-2">
@@ -12,12 +13,13 @@
           class="text-black dark:text-gray-300 pb-1 font-semibold text-sm"
           >Username</label
         >
-        <ErrorMessage name="username" class="text-sm text-red-600" />
+        <p class="text-sm text-red-600">{{ errors.username }}</p>
       </div>
       <vee-field
         name="username"
-        placeholder="John Doe"
+        placeholder="johndoe"
         class="placeholder:text-gray-500 bg-slate-400 dark:bg-gray-700 outline-none w-full flex p-2 items-center text-black dark:text-gray-50 rounded"
+        :class="{ 'border border-red-600': errors.username }"
       />
     </section>
 
@@ -29,13 +31,14 @@
           class="text-black dark:text-gray-300 pb-1 font-semibold text-sm"
           >E-Mail</label
         >
-        <ErrorMessage name="email" class="text-sm text-red-600" />
+        <p class="text-sm text-red-600">{{ errors.email }}</p>
       </div>
       <vee-field
         type="email"
         name="email"
         placeholder="john.doe@email.com"
         class="placeholder:text-gray-500 bg-slate-400 dark:bg-gray-700 outline-none w-full flex p-2 items-center text-black dark:text-gray-50 rounded"
+        :class="{ 'border border-red-600': errors.email }"
       />
     </section>
     <!-- PASSWORD -->
@@ -46,10 +49,11 @@
           class="text-black dark:text-gray-300 pb-1 font-semibold text-sm"
           >Password</label
         >
-        <ErrorMessage name="password" class="text-sm text-red-600" />
+        <p class="text-sm text-red-600">{{ errors.password }}</p>
       </div>
       <div
         class="flex items-center text-black dark:text-gray-50 rounded p-2 bg-slate-400 dark:bg-gray-700"
+        :class="{ 'border border-red-600': errors.password }"
       >
         <vee-field
           v-if="!showPassword"
@@ -79,11 +83,12 @@
           class="text-black dark:text-gray-300 pb-1 font-semibold text-sm"
           >Confirm password</label
         >
-        <ErrorMessage name="confirm_password" class="text-sm text-red-600" />
+        <p class="text-sm text-red-600">{{ errors.confirm_password }}</p>
       </div>
 
       <div
         class="flex items-center text-black dark:text-gray-50 rounded p-2 bg-slate-400 dark:bg-gray-700"
+        :class="{ 'border border-red-600': errors.confirm_password }"
       >
         <vee-field
           v-if="!showPassword"
@@ -100,10 +105,10 @@
           class="bg-slate-400 dark:bg-gray-700 outline-none w-full placeholder:text-gray-500"
         />
 
-        <button @click="togglePassword">
+        <div @click="togglePassword" class="cursor-pointer">
           <EyesIcon v-if="!showPassword" />
           <EyesOff v-if="showPassword" />
-        </button>
+        </div>
       </div>
     </section>
     <!-- ACCEPT TOS -->
@@ -114,7 +119,7 @@
           >Accept <a href="#" class="text-blue-500">Terms of service</a></label
         >
       </div>
-      <ErrorMessage name="tos" class="text-red-600 text-sm" />
+      <p class="text-sm text-red-600">{{ errors.tos }}</p>
     </section>
     <div class="flex items-center justify-center w-full">
       <button
